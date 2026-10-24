@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive epistemic map of Langdon Winner's Do Artifacts Have Politics?">
+    <meta name="theme-color" content="#0d141b">
+    <title>Do Artifacts Have Politics? — Epistemic Map</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#graph-canvas">Skip to the epistemic map</a>
+
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Langdon Winner · The Political Life of Artifacts</p>
+        <h1>Do Artifacts Have Politics?</h1>
+      </div>
+      <p class="instruction">Select a domain, then a concept. The graph reveals its mechanism, evidence, and political relationships.</p>
+    </header>
+
+    <main class="map-section" id="map">
+      <div class="map-toolbar">
+        <div class="map-breadcrumb" aria-live="polite">
+          <button type="button" id="breadcrumb-home">System overview</button>
+          <span aria-hidden="true">/</span>
+          <strong id="breadcrumb-current">All domains</strong>
+        </div>
+
+        <div class="search-wrap">
+          <label class="sr-only" for="map-search">Search the epistemic map</label>
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="map-search" type="search" autocomplete="off" placeholder="Search cases, concepts, relationships…">
+          <div class="search-results" id="search-results" role="listbox" hidden></div>
+        </div>
+      </div>
+
+      <div class="map-layout">
+        <section class="graph-frame" aria-label="Epistemic graph">
+          <div class="graph-canvas" id="graph-canvas" aria-label="Interactive concept graph">
+            <svg class="graph-edges" id="graph-edges" aria-hidden="true"></svg>
+            <div class="graph-nodes" id="graph-nodes"></div>
+          </div>
+          <div class="graph-legend" aria-label="Graph legend">
+            <span><i class="legend-hub"></i> question or domain</span>
+            <span><i class="legend-node"></i> explorable concept</span>
+            <span><i class="legend-line"></i> direct relationship</span>
+            <span><i class="legend-sequence"></i> sequence or feedback</span>
+          </div>
+        </section>
+
+        <aside class="detail-panel" id="detail-panel" aria-live="polite" aria-labelledby="detail-title">
+          <div class="detail-empty" id="detail-empty">
+            <p class="detail-kicker">Reading panel</p>
+            <h2 id="detail-placeholder-title">Select a node</h2>
+            <p>Open any concept for its claim, mechanism, consequences, and links to the rest of Winner’s argument.</p>
+          </div>
+          <div class="detail-content" id="detail-content" hidden></div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
